@@ -22,17 +22,14 @@ void loop() {
   tiltState2 = digitalRead(tiltPin2);
 
   if (tiltState == LOW) {
-    Serial.write("HAHA!");
     Keyboard.write(KEY_DOWN_ARROW);
   }
   else {
     if (tiltState2 == HIGH) {
-      Serial.write("Whoa!");
       Keyboard.press(KEY_RIGHT_ARROW);
       Keyboard.release(KEY_RIGHT_ARROW);
     } 
     else if (tiltState2 == LOW) {
-      Serial.write("Hey!");
       Keyboard.press(KEY_LEFT_ARROW);
       Keyboard.release(KEY_LEFT_ARROW);
     }
